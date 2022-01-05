@@ -1,6 +1,9 @@
 import React from 'react'
 import styled from 'styled-components';
 import { centerIt } from '../globalStyle';
+import { useDispatch } from 'react-redux';
+import { login, logout } from '../features/user';
+
 
 const LoginCont = styled.div`
     width: 90%;
@@ -13,9 +16,26 @@ const LoginCont = styled.div`
 `
 
 const Login = () => {
+
+    const dispatch = useDispatch();
+
+    const changeName = () => {
+        dispatch(login({
+            name: 'Pedro', 
+            age: '27',
+            email: 'pedro@fake.com',
+        }))
+    }
+
+    const revertName = () => {
+                dispatch(logout())
+    }
+
     return (
         <LoginCont>
-            <button>Login</button>
+            <button onClick={changeName}>Login</button>
+            <button onClick={revertName}>Logout</button>
+          
         </LoginCont>
     )
 }
