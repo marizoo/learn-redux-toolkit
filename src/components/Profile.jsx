@@ -11,9 +11,10 @@ margin: 15px 0;
 
 const Profile = () => {
     const user = useSelector( (state) => state.user.value );
+    const themeColor = useSelector((state) => state.theme.value)
 
     return (
-        <ProfileCont>
+        <ProfileCont style={{color: themeColor}}>
             <h2>Profile Page</h2>
             <p>Name: {user.name} </p>
             <p>Age: {user.age}</p>

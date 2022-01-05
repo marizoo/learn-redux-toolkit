@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components';
+import ChangeColor from './components/ChangeColor';
 import Login from './components/Login'
 import Profile from './components/Profile'
 import { centerIt, columnIt, mainColor } from './globalStyle';
@@ -22,8 +23,9 @@ const App = () => {
   return (
     <AppCont>
       <AppWrapper>
-        <Login />
         <Profile />
+        <Login />
+        <ChangeColor />
       </AppWrapper>
     </AppCont>
   )
